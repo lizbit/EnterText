@@ -5,5 +5,8 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_show_text">ShowText</string>
+    <string name="action_about">About</string>
+    <string name="title_activity_about">about</string>
+    <string name="about">Enter Text is a very cool app, which allows one to enter a string and specify a text color, background color, and text size. It then displays the string, in the user-chosen size and color scheme, to the user, no matter how nauseating the color scheme might be.</string>
 
 </resources>

@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -17,6 +19,15 @@ import android.widget.TextView;
 public class MainActivity extends ActionBarActivity {
     Button hello;
     EditText entext;
+    RadioGroup textColorChoice;
+    RadioGroup bgColorChoice;
+    EditText textSizeChoice;
+    int textColor;
+    int bgColor;
+    int textSize;
+    int bgColorValue;
+    int textColorValue;
+    String textSizeString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +35,9 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
         hello = (Button) findViewById(R.id.button);
         entext = (EditText) findViewById(R.id.editText);
+        textColorChoice = (RadioGroup) findViewById(R.id.textcolorradio);
+        bgColorChoice = (RadioGroup) findViewById(R.id.bgcolorradio);
+        textSizeChoice = (EditText) findViewById(R.id.textsize);
     }
 
 
@@ -46,12 +60,58 @@ public class MainActivity extends ActionBarActivity {
             return true;
         }
 
+        if (id == R.id.action_about){
+            Intent aboutintent = new Intent(MainActivity.this, about.class);
+            startActivity(aboutintent);
+        }
+
         return super.onOptionsItemSelected(item);
     }
 
     public void changeText(View view){
         Intent intent = new Intent(MainActivity.this, ShowText.class);
+        bgColor = bgColorChoice.getCheckedRadioButtonId();
+        textColor = textColorChoice.getCheckedRadioButtonId();
+        textSizeString = textSizeChoice.getText().toString();
+        if(textSizeString.equals("")){
+            textSize = 24;
+        }else{
+            textSize = Integer.parseInt(textSizeString);
+        }
+        if(bgColor == R.id.bgRed){
+            bgColorValue = 0xFFFF0000;
+        }else if(bgColor == R.id.bgOrange){
+            bgColorValue = 0xFFFFA000;
+        }else if(bgColor == R.id.bgYellow){
+            bgColorValue = 0xFFFFFF00;
+        }else if(bgColor == R.id.bgGreen){
+            bgColorValue = 0xFF00FF00;
+        }else if(bgColor == R.id.bgBlue){
+            bgColorValue = 0xFF0000FF;
+        }else if(bgColor == R.id.bgPurple){
+            bgColorValue = 0xFFC100FF;
+        }else{
+            bgColorValue = 0xFFFFFFFF;
+        }
+        if(textColor == R.id.textRed){
+            textColorValue = 0xFFFF0000;
+        }else if(textColor == R.id.textOrange){
+            textColorValue = 0xFFFFA000;
+        }else if(textColor == R.id.textYellow){
+            textColorValue = 0xFFFFFF00;
+        }else if(textColor == R.id.textGreen){
+            textColorValue = 0xFF00FF00;
+        }else if(textColor == R.id.textBlue){
+            textColorValue = 0xFF0000FF;
+        }else if(textColor == R.id.textPurple){
+            textColorValue = 0xFFC100FF;
+        }else{
+            textColorValue = 0xFF000000;
+        }
         intent.putExtra("textEntered", entext.getText().toString());
+        intent.putExtra("bgColor", bgColorValue);
+        intent.putExtra("textColor", textColorValue);
+        intent.putExtra("textSize", textSize);
         startActivity(intent);
     }
 }

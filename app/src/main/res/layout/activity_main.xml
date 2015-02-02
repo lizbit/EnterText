@@ -15,12 +15,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/editText"
-        android:layout_centerVertical="true"
+        android:editable="true"
+        android:layout_below="@+id/hwtext"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_marginTop="37dp"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:editable="true" />
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -29,8 +30,159 @@
         android:id="@+id/button"
         android:clickable="true"
         android:onClick="changeText"
+        android:layout_below="@+id/textsize"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="63dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Background Color"
+        android:id="@+id/textView"
         android:layout_below="@+id/editText"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="53dp" />
+        android:textSize="24dp" />
+
+    <RadioGroup
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/bgcolorradio">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="R"
+            android:id="@+id/bgRed"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#ffff0000" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="O"
+            android:id="@+id/bgOrange"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#ffffa000" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Y"
+            android:id="@+id/bgYellow"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#ffffff00" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="G"
+            android:id="@+id/bgGreen"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#ff00ff00" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="B"
+            android:id="@+id/bgBlue"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#ff0000ff" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="P"
+            android:id="@+id/bgPurple"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#ffc100ff" />
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Text Color"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/bgcolorradio"
+        android:layout_centerHorizontal="true"
+        android:textSize="24dp" />
+
+    <RadioGroup
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:id="@+id/textcolorradio">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="R"
+            android:id="@+id/textRed"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#ffff0000" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="O"
+            android:id="@+id/textOrange"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#ffffa000" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Y"
+            android:id="@+id/textYellow"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#ffffff00" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="G"
+            android:id="@+id/textGreen"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#ff00ff00" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="B"
+            android:id="@+id/textBlue"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#ff0000ff" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="P"
+            android:id="@+id/textPurple"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#ffc100ff" />
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Text Size"
+        android:id="@+id/textView3"
+        android:textSize="24dp"
+        android:layout_below="@+id/textcolorradio"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/textsize"
+        android:layout_below="@+id/textView3"
+        android:layout_centerHorizontal="true"
+        android:editable="true" />
 
 </RelativeLayout>

@@ -20,6 +20,10 @@
             android:name=".ShowText"
             android:label="@string/title_activity_show_text" >
         </activity>
+        <activity
+            android:name=".about"
+            android:label="@string/title_activity_about" >
+        </activity>
     </application>
 
 </manifest>

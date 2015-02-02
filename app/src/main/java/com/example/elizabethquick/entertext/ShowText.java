@@ -15,6 +15,9 @@ public class ShowText extends ActionBarActivity {
     RelativeLayout rl;
     Intent intent;
     String stringData;
+    int bgColor;
+    int textColor;
+    int textSize;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,10 +28,14 @@ public class ShowText extends ActionBarActivity {
         intent = getIntent();
         if(intent != null){
             stringData = intent.getStringExtra("textEntered");
+            bgColor = intent.getIntExtra("bgColor", 0xFFFFFFFF);
+            textColor = intent.getIntExtra("textColor", 0xFF000000);
+            textSize = intent.getIntExtra("textSize", 24);
         }
         showingtext.setText(stringData);
-        showingtext.setTextColor(0xFF6FFF3C);
-        rl.setBackgroundColor(0xFFB800FF);
+        showingtext.setTextColor(textColor);
+        showingtext.setTextSize(textSize);
+        rl.setBackgroundColor(bgColor);
     }
 
 
@@ -49,6 +56,11 @@ public class ShowText extends ActionBarActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        }
+
+        if (id == R.id.action_about){
+            Intent aboutintent = new Intent(ShowText.this, about.class);
+            startActivity(aboutintent);
         }
 
         return super.onOptionsItemSelected(item);
